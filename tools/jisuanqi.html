@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>优雅计算器</title>
+    <style>
+        :root {
+            --primary-color: #3498db;
+            --secondary-color: #2ecc71;
+            --background-color: #ecf0f1;
+            --calculator-bg: #fff;
+            --shadow-color: rgba(0, 0, 0, 0.1);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(135deg, var(--background-color), #bdc3c7);
+            overflow: hidden; /* 防止iOS上的滚动缩放 */
+        }
+        
+        .calculator {
+            width: 320px;
+            padding: 25px;
+            border-radius: 15px;
+            background-color: var(--calculator-bg);
+            box-shadow: 0 10px 30px var(--shadow-color);
+            transition: transform 0.3s ease;
+        }
+        
+        .calculator:hover {
+            transform: translateY(-5px);
+        }
+        
+        .display {
+            width: 100%;
+            height: 70px;
+            margin-bottom: 20px;
+            padding: 15px;
+            font-size: 28px;
+            border: none;
+            border-radius: 8px;
+            background-color: #f8f9fa;
+            box-shadow: inset 0 2px 5px var(--shadow-color);
+            text-align: right;
+            outline: none;
+        }
+        
+        .buttons {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-gap: 15px;
+        }
+        
+        button {
+            padding: 15px 0;
+            font-size: 18px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s;
+            outline: none;
+        }
+        
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 10px var(--shadow-color);
+        }
+        
+        button:active {
+            transform: translateY(0);
+        }
+        
+        .number {
+            background-color: #f1f1f1;
+            color: #333;
+        }
+        
+        .operator {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        .equals {
+            background-color: var(--secondary-color);
+            color: white;
+        }
+        
+        .clear {
+            background-color: #e74c3c;
+            color: white;
+        }
+        
+        .parenthesis {
+            background-color: #d35400;
+            color: white;
+        }
+        
+        .decimal {
+            background-color: #2c3e50;
+            color: white;
+        }
+        
+        .backspace {
+            background-color: #f39c12;
+            color: white;
+        }
+        
+        @media (max-width: 480px) {
+            .calculator {
+                width: 90%;
+                margin: 0 5%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="calculator">
+        <input type="text" class="display" id="display" readonly>
+        <div class="buttons">
+            <button class="clear" onclick="clearDisplay()">C</button>
+            <button class="parenthesis" onclick="appendToDisplay('(')">(</button>
+            <button class="parenthesis" onclick="appendToDisplay(')')">)</button>
+            <button class="backspace" onclick="backspace()">⌫</button>
+            
+            <button class="number" onclick="appendToDisplay('7')">7</button>
+            <button class="number" onclick="appendToDisplay('8')">8</button>
+            <button class="number" onclick="appendToDisplay('9')">9</button>
+            <button class="operator" onclick="appendToDisplay('/')">/</button>
+            
+            <button class="number" onclick="appendToDisplay('4')">4</button>
+            <button class="number" onclick="appendToDisplay('5')">5</button>
+            <button class="number" onclick="appendToDisplay('6')">6</button>
+            <button class="operator" onclick="appendToDisplay('*')">×</button>
+            
+            <button class="number" onclick="appendToDisplay('1')">1</button>
+            <button class="number" onclick="appendToDisplay('2')">2</button>
+            <button class="number" onclick="appendToDisplay('3')">3</button>
+            <button class="operator" onclick="appendToDisplay('-')">-</button>
+            
+            <button class="number" onclick="appendToDisplay('0')">0</button>
+            <button class="decimal" onclick="appendToDisplay('.')">.</button>
+            <button class="equals" onclick="calculate()">=</button>
+            <button class="operator" onclick="appendToDisplay('+')">+</button>
+        </div>
+    </div>
+
+    <script>
+        const display = document.getElementById('display');
+        
+        function appendToDisplay(value) {
+            // 防止连续的操作符
+            const currentValue = display.value;
+            const lastChar = currentValue.slice(-1);
+            
+            // 如果最后一个字符是操作符，且新添加的也是操作符（除括号外），则替换
+            if (['+', '-', '*', '/'].includes(lastChar) && ['+', '-', '*', '/'].includes(value)) {
+                display.value = currentValue.slice(0, -1) + value;
+                return;
+            }
+            
+            // 允许连续添加括号
+            display.value += value;
+        }
+        
+        function clearDisplay() {
+            display.value = '';
+        }
+        
+        function backspace() {
+            display.value = display.value.slice(0, -1);
+        }
+        
+        function calculate() {
+            try {
+                // 基本安全检查 - 防止非数字字符
+                if (!/^[0-9+\-*/().\s]+$/.test(display.value)) {
+                    throw new Error("无效输入");
+                }
+                
+                // 简单检查括号是否匹配
+                let count = 0;
+                for (const char of display.value) {
+                    if (char === '(') count++;
+                    if (char === ')') count--;
+                    if (count < 0) {
+                        throw new Error("括号不匹配");
+                    }
+                }
+                if (count !== 0) throw new Error("括号不匹配");
+                
+                // 计算结果
+                const result = eval(display.value);
+                
+                // 格式化结果，避免显示过多小数位
+                let formattedResult;
+                
+                // 如果是整数，直接显示，否则只显示到小数点后10位
+                if (Number.isInteger(result)) {
+                    formattedResult = result;
+                } else {
+                    formattedResult = Number(result.toFixed(10));
+                }
+                
+                // 显示结果
+                display.value = formattedResult;
+            } catch (error) {
+                display.value = '错误';
+                setTimeout(clearDisplay, 1500);
+            }
+        }
+        
+        // 添加键盘支持
+        document.addEventListener('keydown', function(event) {
+            const key = event.key;
+            
+            if (/[0-9+\-*/().=]/.test(key)) {
+                appendToDisplay(key === '=' ? '=' : key);
+                event.preventDefault();
+            } else if (key === 'Enter') {
+                calculate();
+                event.preventDefault();
+            } else if (key === 'Backspace') {
+                backspace();
+                event.preventDefault();
+            } else if (key === 'Escape' || key === 'c' || key === 'C') {
+                clearDisplay();
+                event.preventDefault();
+            }
+        });
+    </script>
+</body>
+</html>
