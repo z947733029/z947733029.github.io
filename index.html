@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    <title>晓柏拉图的导航站</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" href="favicon.ico">
+</head>
+
+<body>
+    <div class="container">
+
+        <div class="search-container">
+            <header>
+                <div class="clock" id="clock"></div>
+                <p id="date-info" class="text-lg"></p>
+            </header>
+            <form class="search-form" id="searchForm">
+                <select class="search-select" id="searchEngine">
+                    <option value="https://www.baidu.com/s?wd=">百度</option>
+                    <option value="https://metaso.cn/?q=">秘塔</option>
+                    <option value="https://cn.bing.com/search?q=">Bing</option>
+                    <option value="https://www.xiaohongshu.com/search_result?keyword=">小红书</option>
+                    <option value="https://search.bilibili.com/all?keyword=">B站</option>
+                    <option value="https://weixin.sogou.com/weixin?type=2&s_from=input&query=">微信</option>
+                </select>
+                <input type="text" class="search-input" placeholder="输入关键词搜索..." id="searchInput">
+            </form>
+        </div>
+
+        <div class="categories">
+            <nav class="category-nav">
+                <a href="#design" class="category-link">设计网站</a>
+                <a href="#ai" class="category-link">AI工具</a>
+                <a href="#web" class="category-link">网站管理</a>
+                <a href="#fun" class="category-link">影音娱乐</a>
+                <a href="#tools" class="category-link">工具资源</a>
+            </nav>
+
+            <div id="design" class="category show">
+                <h2 class="category-title">设计网站</h2>
+                <div class="site-list">
+                    <a href="https://huaban.com/" target="_blank" class="site-card">
+                        <div class="site-avatar">
+                            <img src="images/huaban.jpg">
+                        </div>
+                        <div class="site-info">
+                            <h3 class="site-name">花瓣网</h3>
+                            <p class="site-desc">陪你做生活的设计师</p>
+                        </div>
+                    </a>
+
+                    <a href="https://www.design006.com/" target="_blank" class="site-card">
+                        <div class="site-avatar">
+                            <img src="images/xiangsheji.jpg">
+                        </div>
+                        <div class="site-info">
+                            <h3 class="site-name">享设计</h3>
+                            <p class="site-desc">作品共享交易平台</p>
+                        </div>
+                    </a>
+
+                    <a href="https://www.kujiale.com/" target="_blank" class="site-card">
+                        <div class="site-avatar">
+                            <img src="images/kujiale.jpg">
+                        </div>
+                        <div class="site-info">
+                            <h3 class="site-name">酷家乐</h3>
+                            <p class="site-desc">3D智能云家装设计</p>
+                        </div>
+                    </a>
+
+                    <a href="https://blender.kim/" target="_blank" class="site-card">
+                        <div class="site-avatar">
+                            <img src="images/mokuwang.jpg">
+                        </div>
+                        <div class="site-info">
+                            <h3 class="site-name">魔酷网</h3>
+                            <p class="site-desc">魔酷网模型一站式下载</p>
+                        </div>
+                    </a>
+
+                    <a href="http://www.sccnn.com/" target="_blank" class="site-card">
+                        <div class="site-avatar">
+                            <img src="images/sucaizhongguo.jpg">
+                        </div>
+                        <div class="site-info">
+                            <h3 class="site-name">素材中国</h3>
+                            <p class="site-desc">素材共享平台</p>
+                        </div>
+                    </a>
+
+                    <a href="https://www.nipic.com/" target="_blank" class="site-card">
+                        <div class="site-avatar">
+                            <img src="images/nituwang.jpg">
+                        </div>
+                        <div class="site-info">
+                            <h3 class="site-name">昵图网</h3>
+                            <p class="site-desc">原创素材共享平台</p>
+                        </div>
+                    </a>
+
+                    <a href="https://www.aigei.com/" target="_blank" class="site-card">
+                        <div class="site-avatar">
+                            <img src="images/aigeiwang.jpg">
+                        </div>
+                        <div class="site-info">
+                            <h3 class="site-name">爱给网</h3>
+                            <p class="site-desc">让创作更简单</p>
+                        </div>
+                    </a>
+
+                    <a href="https://js.design/" target="_blank" class="site-card">
+                        <div class="site-avatar">
+                            <img src="images/jishisheji.jpg">
+                        </div>
+                        <div class="site-info">
+                            <h3 class="site-name">即时设计</h3>
+                            <p class="site-desc">可实时协作的专业UI设计工具</p>
+                        </div>
+                    </a>
+
+                    <a href="https://www.chuangkit.com/" target="_blank" class="site-card">
+                        <div class="site-avatar">
+                            <img src="images/chuangketie.jpg">
+                        </div>
+                        <div class="site-info">
+                            <h3 class="site-name">创客贴</h3>
+                            <p class="site-desc">会打字就能做设计</p>
+                        </div>
+                    </a>
+
+                    <a href="https://www.iconfont.cn/" target="_blank" class="site-card">
+                        <div class="site-avatar">
+                            <img src="images/iconfont.jpg">
+                        </div>
+                        <div class="site-info">
+                            <h3 class="site-name">iconfont</h3>
+                            <p class="site-desc">阿里巴巴矢量图标库</p>
+                        </div>
+                    </a>
+
+                    <a href="https://www.zcool.com.cn/" target="_blank" class="site-card">
+                        <div class="site-avatar">
+                            <img src="images/zhanku.jpg">
+                        </div>
+                        <div class="site-info">
+                            <h3 class="site-name">站酷ZCOOL</h3>
+                            <p class="site-desc">发现更好的设计!</p>
+                        </div>
+                    </a>
+
+                    <a href="https://www.znzmo.com/" target="_blank" class="site-card">
+                        <div class="site-avatar">
+                            <img src="images/zhimo.jpg">
+                        </div>
+                        <div class="site-info">
+                            <h3 class="site-name">知末网</h3>
+                            <p class="site-desc">拥有近500万效果图作品</p>
+                        </div>
+                    </a>
+
+                    <a href="https://www.51pptmoban.com/" target="_blank" class="site-card">
+                        <div class="site-avatar">
+                            <img src="images/51ppt.jpg">
+                        </div>
+                        <div class="site-info">
+                            <h3 class="site-name">51PPT模板网</h3>
+                            <p class="site-desc">幻灯片演示模板及素材免费下载</p>
+                        </div>
+                    </a>
+
+                    <a href="https://www.logomaker.com.cn/" target="_blank" class="site-card">
+                        <div class="site-avatar">
+                            <img src="images/biaozhike.jpg">
+                        </div>
+                        <div class="site-info">
+                            <h3 class="site-name">标智客</h3>
+                            <p class="site-desc">logo免费设计在线生成</p>
+                        </div>
+                    </a>
+
+                    <a href="https://www.maoken.com/" target="_blank" class="site-card">
+                        <div class="site-avatar">
+                            <img src="images/maokenwang.jpg">
+                        </div>
+                        <div class="site-info">
+                            <h3 class="site-name">猫啃网</h3>
+                            <p class="site-desc">免费商用字体</p>
+                        </div>
+                    </a>
+
+                    <a href="https://www.xiaohongshu.com/" target="_blank" class="site-card">
+                        <div class="site-avatar">
+                            <img src="images/xiaohongshu.jpg">
+                        </div>
+                        <div class="site-info">
+                            <h3 class="site-name">小红书</h3>
+                            <p class="site-desc">你的生活指南</p>
+                        </div>
+                    </a>
+
+                    <a href="https://www.720yun.com/" target="_blank" class="site-card">
+                        <div class="site-avatar">
+                            <img src="images/720yun.jpg">
+                        </div>
+                        <div class="site-info">
+                            <h3 class="site-name">720云</h3>
+                            <p class="site-desc">一站式专业全景平台</p>
+                        </div>
+                    </a>
+
+                    <a href="https://www.pexels.com/" target="_blank" class="site-card">
+                        <div class="site-avatar">
+                            <img src="images/pexels.jpg">
+                        </div>
+                        <div class="site-info">
+                            <h3 class="site-name">pexels</h3>
+                            <p class="site-desc">免费素材图片</p>
+                        </div>
+                    </a>
+
+                    <a href="https://pixabay.com/" target="_blank" class="site-card">
+                        <div class="site-avatar">
+                            <img src="images/pixabay.jpg">
+                        </div>
+                        <div class="site-info">
+                            <h3 class="site-name">Pixabay</h3>
+                            <p class="site-desc">免费正版高清图片素材库</p>
+                        </div>
+                    </a>
+
+                    <a href="https://www.baoxiaohe.com/" target="_blank" class="site-card">
+                        <div class="site-avatar">
+                            <img src="images/baoxiaohe.jpg">
+                        </div>
+                        <div class="site-info">
+                            <h3 class="site-name">包小盒</h3>
+                            <p class="site-desc">在线3D包装设计工具</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <div id="ai" class="category show">
+                <h2 class="category-title">AI工具</h2>
+                <div class="site-list">
+                    <a href="https://yiyan.baidu.com/" target="_blank" class="site-card">
+                        <div class="site-avatar">
+                            <img src="images/wenxinyiyan.jpg">
+                        </div>
+                        <div class="site-info">
+                            <h3 class="site-name">文心一言</h3>
+                            <p class="site-desc">你的智能伙伴</p>
+                        </div>
+                    </a>
+
+                    <a href="https://www.doubao.com/" target="_blank" class="site-card">
+                        <div class="site-avatar">
+                            <img src="images/doubao.jpg">
+                        </div>
+                        <div class="site-info">
+                            <h3 class="site-name">豆包</h3>
+                            <p class="site-desc">字节跳动旗下AI助手</p>
+                        </div>
+                    </a>
+
+                    <a href="https://yuanbao.tencent.com/" target="_blank" class="site-card">
+                        <div class="site-avatar">
+                            <img src="images/yuanbao.jpg">
+                        </div>
+                        <div class="site-info">
+                            <h3 class="site-name">腾讯元宝</h3>
+                            <p class="site-desc">你身边的智能助手</p>
+                        </div>
+                    </a>
+
+                    <a href="https://3d.hunyuan.tencent.com/" target="_blank" class="site-card">
+                        <div class="site-avatar">
+                            <img src="images/hunyuan3d.jpg">
+                        </div>
+                        <div class="site-info">
+                            <h3 class="site-name">腾讯混元3D</h3>
+                            <p class="site-desc">一站式3D内容AI创作平台</p>
+                        </div>
+                    </a>
+
+                    <a href="https://chat.deepseek.com/" target="_blank" class="site-card">
+                        <div class="site-avatar">
+                            <img src="images/deepseek.jpg">
+                        </div>
+                        <div class="site-info">
+                            <h3 class="site-name">DeepSeek</h3>
+                            <p class="site-desc">探索未至之境</p>
+                        </div>
+                    </a>
+
+                    <a href="https://www.tiangong.cn/" target="_blank" class="site-card">
+                        <div class="site-avatar">
+                            <img src="images/tiangongai.jpg">
+                        </div>
+                        <div class="site-info">
+                            <h3 class="site-name">天工AI</h3>
+                            <p class="site-desc">搜索更深度，阅读更多彩</p>
+                        </div>
+                    </a>
+
+                    <a href="https://kimi.moonshot.cn/" target="_blank" class="site-card">
+                        <div class="site-avatar">
+                            <img src="images/kimi.jpg">
+                        </div>
+                        <div class="site-info">
+                            <h3 class="site-name">Kimi</h3>
+                            <p class="site-desc">能深度思考的AI助手</p>
+                        </div>
+                    </a>
+
+                    <a href="https://image.baidu.com/" target="_blank" class="site-card">
+                        <div class="site-avatar">
+                            <img src="images/baidutupian.jpg">
+                        </div>
+                        <div class="site-info">
+                            <h3 class="site-name">百度图片</h3>
+                            <p class="site-desc">免费AI图像生成工具与海量高清图平台</p>
+                        </div>
+                    </a>
+
+                    <a href="https://tongyi.aliyun.com/" target="_blank" class="site-card">
+                        <div class="site-avatar">
+                            <img src="images/tongyiqianwen.jpg">
+                        </div>
+                        <div class="site-info">
+                            <h3 class="site-name">通义</h3>
+                            <p class="site-desc">你的个人AI助手</p>
+                        </div>
+                    </a>
+
+                    <a href="https://jimeng.jianying.com/" target="_blank" class="site-card">
+                        <div class="site-avatar">
+                            <img src="images/jimengai.jpg">
+                        </div>
+                        <div class="site-info">
+                            <h3 class="site-name">即梦AI</h3>
+                            <p class="site-desc">一站式AI创作平台</p>
+                        </div>
+                    </a>
+
+                    <a href="https://ima.qq.com/" target="_blank" class="site-card">
+                        <div class="site-avatar">
+                            <img src="images/imacopilot.jpg">
+                        </div>
+                        <div class="site-info">
+                            <h3 class="site-name">ima.copilot</h3>
+                            <p class="site-desc">腾讯智能工作台</p>
+                        </div>
+                    </a>
+
+                    <a href="https://www.coze.cn/" target="_blank" class="site-card">
+                        <div class="site-avatar">
+                            <img src="images/kouzikongjian.jpg">
+                        </div>
+                        <div class="site-info">
+                            <h3 class="site-name">扣子空间</h3>
+                            <p class="site-desc">新一代AI应用开发平台</p>
+                        </div>
+                    </a>
+
+                    <a href="https://chat.qwen.ai/" target="_blank" class="site-card">
+                        <div class="site-avatar">
+                            <img src="images/qwen.jpg">
+                        </div>
+                        <div class="site-info">
+                            <h3 class="site-name">Qwen</h3>
+                            <p class="site-desc">超大规模语言模型</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <div id="web" class="category show">
+                <h2 class="category-title">网站管理</h2>
+                <div class="site-list">
+                    <a href="https://dash.cloudflare.com/" target="_blank" class="site-card">
+                        <div class="site-avatar">
+                            <img src="images/cloudflare.jpg">
+                        </div>
+                        <div class="site-info">
+                            <h3 class="site-name">cloudflare</h3>
+                            <p class="site-desc">随时随地连接、保护和构建</p>
+                        </div>
+                    </a>
+
+                    <a href="https://www.west.cn/" target="_blank" class="site-card">
+                        <div class="site-avatar">
+                            <img src="images/xibushuma.jpg">
+                        </div>
+                        <div class="site-info">
+                            <h3 class="site-name">西部数码</h3>
+                            <p class="site-desc">23年知名云服务商</p>
+                        </div>
+                    </a>
+
+                    <a href="https://dnspod.cloud.tencent.com/" target="_blank" class="site-card">
+                        <div class="site-avatar">
+                            <img src="images/tengxunyun.jpg">
+                        </div>
+                        <div class="site-info">
+                            <h3 class="site-name">腾讯云</h3>
+                            <p class="site-desc">域名注册 免费智能DNS</p>
+                        </div>
+                    </a>
+
+                    <a href="https://club.fnnas.com/" target="_blank" class="site-card">
+                        <div class="site-avatar">
+                            <img src="images/feiniuluntan.jpg">
+                        </div>
+                        <div class="site-info">
+                            <h3 class="site-name">飞牛论坛</h3>
+                            <p class="site-desc">飞牛私有云论坛</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <div id="fun" class="category show">
+                <h2 class="category-title">影音娱乐</h2>
+                <div class="site-list">
+                    <a href="https://rebang.today/" target="_blank" class="site-card">
+                        <div class="site-avatar">
+                            <img src="images/jinrirebang.jpg">
+                        </div>
+                        <div class="site-info">
+                            <h3 class="site-name">今日热榜</h3>
+                            <p class="site-desc">今日热榜汇聚全网热搜</p>
+                        </div>
+                    </a>
+
+                    <a href="https://www.bilibili.com/" target="_blank" class="site-card">
+                        <div class="site-avatar">
+                            <img src="images/bilibili.jpg">
+                        </div>
+                        <div class="site-info">
+                            <h3 class="site-name">哔哩哔哩</h3>
+                            <p class="site-desc">(゜-゜)つロ 干杯~-bilibili</p>
+                        </div>
+                    </a>
+
+                    <a href="https://music.163.com/" target="_blank" class="site-card">
+                        <div class="site-avatar">
+                            <img src="images/wangyiyun.jpg">
+                        </div>
+                        <div class="site-info">
+                            <h3 class="site-name">网易云音乐</h3>
+                            <p class="site-desc">专注于发现与分享的音乐产品</p>
+                        </div>
+                    </a>
+
+                    <a href="https://www.zhihu.com/" target="_blank" class="site-card">
+                        <div class="site-avatar">
+                            <img src="images/zhihu.jpg">
+                        </div>
+                        <div class="site-info">
+                            <h3 class="site-name">知乎</h3>
+                            <p class="site-desc">中文互联网高质量问答社区</p>
+                        </div>
+                    </a>
+
+                    <a href="https://www.douyin.com/" target="_blank" class="site-card">
+                        <div class="site-avatar">
+                            <img src="images/douyin.jpg">
+                        </div>
+                        <div class="site-info">
+                            <h3 class="site-name">抖音</h3>
+                            <p class="site-desc">记录美好生活</p>
+                        </div>
+                    </a>
+
+                    <a href="https://sway.cloud.microsoft/HcdqBoAwtPq6xHuu" target="_blank" class="site-card">
+                        <div class="site-avatar">
+                            <img src="images/kesuen.jpg">
+                        </div>
+                        <div class="site-info">
+                            <h3 class="site-name">克苏恩站</h3>
+                            <p class="site-desc">一个分享资源的小站</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <div id="tools" class="category show">
+                <h2 class="category-title">工具资源</h2>
+                <div class="site-list">
+                    <a href="https://fanyi.baidu.com/" target="_blank" class="site-card">
+                        <div class="site-avatar">
+                            <img src="images/baidufanyi.jpg" alt="Canva">
+                        </div>
+                        <div class="site-info">
+                            <h3 class="site-name">百度翻译</h3>
+                            <p class="site-desc">领先的AI大模型翻译</p>
+                        </div>
+                    </a>
+
+                    <a href="https://map.baidu.com/" target="_blank" class="site-card">
+                        <div class="site-avatar">
+                            <img src="images/baiduditu.jpg" alt="Canva">
+                        </div>
+                        <div class="site-info">
+                            <h3 class="site-name">百度地图</h3>
+                            <p class="site-desc">您的出行指南、生活助手</p>
+                        </div>
+                    </a>
+
+                    <a href="https://filehelper.weixin.qq.com/" target="_blank" class="site-card">
+                        <div class="site-avatar">
+                            <img src="images/weixinzhushou.jpg" alt="Canva">
+                        </div>
+                        <div class="site-info">
+                            <h3 class="site-name">微信文件助手</h3>
+                            <p class="site-desc">微信文件传输助手网页版</p>
+                        </div>
+                    </a>
+
+                    <a href="https://cli.im/" target="_blank" class="site-card">
+                        <div class="site-avatar">
+                            <img src="images/caoliao.jpg" alt="Canva">
+                        </div>
+                        <div class="site-info">
+                            <h3 class="site-name">草料二维码</h3>
+                            <p class="site-desc">一站式二维码生成工具</p>
+                        </div>
+                    </a>
+
+                    <a href="https://www.souziti.com/" target="_blank" class="site-card">
+                        <div class="site-avatar">
+                            <img src="images/souziti.jpg" alt="Canva">
+                        </div>
+                        <div class="site-info">
+                            <h3 class="site-name">字体识别</h3>
+                            <p class="site-desc">在线扫一扫图片找字体</p>
+                        </div>
+                    </a>
+
+                    <a href="https://favicon.im/" target="_blank" class="site-card">
+                        <div class="site-avatar">
+                            <img src="images/favicon.jpg" alt="Canva">
+                        </div>
+                        <div class="site-info">
+                            <h3 class="site-name">Favicon.im</h3>
+                            <p class="site-desc">网站图标</p>
+                        </div>
+                    </a>
+
+                    <a href="tools/jisuanqi.html" target="_blank" class="site-card">
+                        <div class="site-avatar">
+                            <img src="images/jisuanqi.jpg" alt="Canva">
+                        </div>
+                        <div class="site-info">
+                            <h3 class="site-name">计算器</h3>
+                            <p class="site-desc">一个简单的计算器</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!--
+        <footer>
+            <p class="copyright">© 2025 我的网站导航 版权所有</p>
+        </footer>
+        -->
+    </div>
+
+    <script src="js/script.js"></script>
+
+    <script>
+        const dateElement = document.getElementById('date-info');
+        const currentDate = new Date();
+        const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+        const formattedDate = currentDate.toLocaleDateString('zh-CN', options);
+        dateElement.textContent = formattedDate;
+        function updateTime() {
+            const now = new Date();
+            const hours = String(now.getHours()).padStart(2, '0');
+            const minutes = String(now.getMinutes()).padStart(2, '0');
+            const seconds = String(now.getSeconds()).padStart(2, '0');
+
+            const timeString = `${hours}:${minutes}:${seconds}`;
+            document.getElementById('clock').textContent = timeString;
+        }
+
+        setInterval(updateTime, 1000);
+        updateTime();
+    </script>
+</body>
+
+</html>
