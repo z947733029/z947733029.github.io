@@ -265,12 +265,12 @@ footer {
 
 @media (max-width: 768px) {
     .site-list {
-        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
     }
 }
 
 @media (max-width: 480px) {
     .site-list {
-        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
     }
 }
